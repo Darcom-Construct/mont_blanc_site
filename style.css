@@ -172,6 +172,7 @@ nav a:hover::after {
 }
 .site-footer {
   background-color: #958880;
+  border-top: 1px solid white;
   color: white;
   padding: 40px 20px 20px;
   font-size: 0.9rem;
