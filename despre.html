@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Despre noi – Mont Blanc Olănești</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+<body class="inner-page">
+  <div class="logo-bar">
+    <img src="poze/logo.png" alt="Logo Mont Blanc Olănești" />
+  </div>
+
+  <div class="nav-bar">
+    <nav>
+      <a href="index.html">Acasă</a>
+      <a href="camere.html">Camere</a>
+      <a href="despre.html" class="active">Despre noi</a>
+      <a href="#">Cantonamente si Team Building-uri</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="booking-btn" href="oferte.html">Oferte de sezon</a>
+  </div>
+
+  <main class="content about-page">
+    <section class="about-section">
+      <h1>Despre Mont Blanc Olănești</h1>
+      <p>
+        Situată în inima stațiunii Băile Olănești, pensiunea Mont Blanc oferă o oază de liniște și relaxare pentru cei care își doresc o experiență autentică în mijlocul naturii. Cu un design elegant, facilități moderne și o echipă dedicată, pensiunea noastră este locul ideal pentru vacanțe de neuitat, retreat-uri sau team building-uri.
+      </p>
+      <p>
+        Ne mândrim cu servicii personalizate, camere confortabile și un centru Wellness & Spa care vă va răsfăța simțurile. Descoperiți frumusețea peisajelor din împrejurimi și bucurați-vă de ospitalitatea noastră într-un cadru rafinat și primitor.
+      </p>
+    </section>
+  </main>
+    <div id="map"></div>
+
+
+  <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-contact-with-logo">
+
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="poze/logo.png" alt="Mont Blanc Olănești" />
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>Str. Libertății Nr. 5<br>Băile Olănești, Jud. Vâlcea</p>
+        <p><a href="tel:+40766583897">+40766583897</a></p>
+        <p><a>montblancolanesti@yahoo.com</a></p>
+      </div>
+
+      <!-- Pictograme ANPC una sub alta -->
+      <div class="footer-picto">
+        <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow">
+          <img src="https://kitamaru.ro/images/anpc/anpc-sal.svg" alt="SAL" />
+        </a>
+        <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="nofollow">
+          <img src="https://kitamaru.ro/images/anpc/anpc-sol.svg" alt="ODR" />
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    © 2025 Mont Blanc Olănești | Toate drepturile rezervate
+  </div>
+</footer>
+<script>
+  const map = L.map('map').setView([45.203684, 24.239584], 15); // Centrare în Olănești
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+  const iconMontBlanc = L.icon({
+  iconUrl: 'poze/logo.png',
+  iconSize: [64, 64],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -30]
+});
+
+const iconTisa = L.icon({
+  iconUrl: 'poze/piscina.png',
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -30]
+});
+
+const iconIzvoare = L.icon({
+  iconUrl: 'poze/plimbare.png',
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -30]
+});
+
+const iconImperial = L.icon({
+  iconUrl: 'poze/piscina.png',
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -30]
+});
+
+const iconParc = L.icon({
+  iconUrl: 'poze/parc.png',
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -30]
+});
+
+const iconIzvor24 = L.icon({
+  iconUrl: 'poze/izvor3.png',
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -30]
+});
+
+const iconDiana = L.icon({
+  iconUrl: 'poze/diana.png',
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -30]
+});
+
+
+  L.marker([45.203139, 24.238211], { icon: iconMontBlanc }).addTo(map)
+  .bindPopup('Mont Blanc Olănești');
+
+L.marker([45.202402, 24.241231], { icon: iconTisa }).addTo(map)
+  .bindPopup('Tisa Spa Resort');
+
+L.marker([45.205919, 24.234805], { icon: iconIzvoare }).addTo(map)
+  .bindPopup('Aleea Izvoarelor');
+
+L.marker([45.203540, 24.238560], { icon: iconImperial }).addTo(map)
+  .bindPopup('Imperial Spa');
+
+L.marker([45.204553, 24.238482], { icon: iconParc }).addTo(map)
+  .bindPopup('Parcul Băile Olănești');
+
+L.marker([45.209298, 24.229022], { icon: iconIzvor24 }).addTo(map)
+  .bindPopup('Izvorul Nr. 24');
+
+L.marker([45.204523, 24.236996], { icon: iconDiana }).addTo(map)
+  .bindPopup('Supermarket Diana');
+
+</script>
+
+
+</body>
+</html>

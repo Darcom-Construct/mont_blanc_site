@@ -29,13 +29,17 @@ header {
 }
 
 .logo-bar {
-    height: 90px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 12px 0;
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(8px);
+  z-index: 1000;
 }
 
 .logo-bar img {
@@ -44,6 +48,9 @@ header {
 }
 
 .nav-bar {
+  position: fixed;
+  top: 90px; /* exact sub logo-bar */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,6 +61,7 @@ header {
   backdrop-filter: blur(6px);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 999;
 }
 
 nav {
@@ -167,22 +175,22 @@ nav a:hover::after {
   color: white;
   padding: 40px 20px 20px;
   font-size: 0.9rem;
-  text-align: center;
 }
 
 .footer-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
 }
 
 .footer-contact-with-logo {
   display: flex;
-  align-items: center;
-  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .footer-logo img {
@@ -190,39 +198,84 @@ nav a:hover::after {
   width: auto;
 }
 
+.footer-contact {
+  text-align: left;
+}
+
 .footer-contact h3 {
   margin-bottom: 10px;
   font-size: 1.1rem;
   text-transform: uppercase;
-  text-align: left;
 }
 
 .footer-contact p, .footer-contact a {
   margin: 4px 0;
   color: white;
   text-decoration: none;
-  text-align: left;
 }
 
-.footer-social {
-  margin-top: 10px;
-  text-align: left;
+.footer-picto {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.footer-social a img {
-  height: 24px;
-  background: transparent;
-}
-
-.footer-social a img:hover {
-  opacity: 0.7;
+.footer-picto img {
+  height: 60px;
+  width: auto;
+  display: block;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.3);
   padding-top: 10px;
   text-align: center;
+  width: 100%;
 }
+.content.about-page {
+  max-width: 800px;
+  margin: 200px auto 100px;
+  padding: 0 20px;
+  color: var(--brown-muted);
+  text-align: center;
+}
+
+.about-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+body.inner-page .logo-bar {
+  background-color: var(--sand);
+  backdrop-filter: none;
+}
+
+body.inner-page .nav-bar {
+  background-color: var(--taupe);
+  backdrop-filter: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+nav a.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+#map {
+  width: 100%;      /* sau altă valoare: ex. 600px */
+  height: 400px;     /* micșorează aici cât vrei */
+  max-width: 800px;  /* opțional, pentru limitare */
+  margin: 50px auto; /* centrare */
+  border-radius: 10px; /* opțional, colțuri rotunde */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* opțional, umbră */
+}
+
+
+
 
 
 
