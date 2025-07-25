@@ -305,6 +305,29 @@ nav a.active::after {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
+.distante-attractii {
+  margin: 60px auto;
+  max-width: 800px;
+  padding: 0 20px;
+  text-align: center;
+  color: var(--brown-muted);
+}
+
+.distante-attractii h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.distante-attractii ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.distante-attractii li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
 
 
 
