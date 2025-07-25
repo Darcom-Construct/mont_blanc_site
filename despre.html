@@ -6,9 +6,8 @@
   <title>Despre noi – Mont Blanc Olănești</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  <!-- Leaflet CSS -->
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 </head>
@@ -28,57 +27,56 @@
     <a class="booking-btn" href="oferte.html">Oferte de sezon</a>
   </div>
 
-  <main class="content about-page">
-    <section class="about-section">
+ <main class="content about-page">
+  <div class="about-flex">
+    <div class="about-text">
       <h1>Despre Mont Blanc Olănești</h1>
       <p>
         Situată în inima stațiunii Băile Olănești, pensiunea Mont Blanc oferă o oază de liniște și relaxare pentru cei care își doresc o experiență autentică în mijlocul naturii. Cu un design elegant, facilități moderne și o echipă dedicată, pensiunea noastră este locul ideal pentru vacanțe de neuitat, retreat-uri sau team building-uri.
       </p>
       <p>
-        Ne mândrim cu servicii personalizate, camere confortabile și un centru Wellness & Spa care vă va răsfăța simțurile. Descoperiți frumusețea peisajelor din împrejurimi și bucurați-vă de ospitalitatea noastră într-un cadru rafinat și primitor.
+        Ne mândrim cu servicii personalizate, camere confortabile și o atmosferă caldă, primitoare. Cu peste 15 ani de experiență în domeniul hotelier, știm cum să transformăm fiecare sejur într-o experiență memorabilă. Descoperiți frumusețea peisajelor din împrejurimi și bucurați-vă de ospitalitatea noastră într-un cadru rafinat și liniștit.
       </p>
-    </section>
-  </main>
-    <div id="map"></div>
-
-
-  <footer class="site-footer">
+    </div>
+    <div class="about-video">
+      <video autoplay muted loop playsinline>
+        <source src="poze/despre.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</main>
+<div id="map"></div>
+    <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-contact-with-logo">
 
-      <!-- Logo -->
+    
       <div class="footer-logo">
         <img src="poze/logo.png" alt="Mont Blanc Olănești" />
       </div>
-
-      <!-- Contact Info -->
       <div class="footer-contact">
         <h3>Contact</h3>
         <p>Str. Libertății Nr. 5<br>Băile Olănești, Jud. Vâlcea</p>
         <p><a href="tel:+40766583897">+40766583897</a></p>
         <p><a>montblancolanesti@yahoo.com</a></p>
       </div>
-
-      <!-- Pictograme ANPC una sub alta -->
       <div class="footer-picto">
-        <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow">
+        <a href="https://reclamatiisal.anpc.ro/?_gl=1*1ucfdba*_ga*MTIxMDg2NDczMC4xNzUzNDQ0NTI0*_ga_FDVTGP2007*czE3NTM0NTA3MDIkbzEkZzEkdDE3NTM0NTA3MjQkajM4JGwwJGgw" target="_blank" rel="nofollow">
           <img src="https://kitamaru.ro/images/anpc/anpc-sal.svg" alt="SAL" />
         </a>
-        <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="nofollow">
+        <a href="https://consumer-redress.ec.europa.eu/index_ro" target="_blank" rel="nofollow">
           <img src="https://kitamaru.ro/images/anpc/anpc-sol.svg" alt="ODR" />
         </a>
       </div>
 
     </div>
   </div>
-
-  <!-- Copyright -->
   <div class="footer-bottom">
     © 2025 Mont Blanc Olănești | Toate drepturile rezervate
   </div>
 </footer>
 <script>
-  const map = L.map('map').setView([45.203684, 24.239584], 15); // Centrare în Olănești
+  const map = L.map('map').setView([45.203684, 24.239584], 15);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
@@ -131,7 +129,12 @@ const iconDiana = L.icon({
   iconAnchor: [16, 32],
   popupAnchor: [0, -30]
 });
-
+const iconBiserica = L.icon({
+  iconUrl: 'poze/biserica.png',
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -30]
+});
 
   L.marker([45.203139, 24.238211], { icon: iconMontBlanc }).addTo(map)
   .bindPopup('Mont Blanc Olănești');
@@ -153,6 +156,8 @@ L.marker([45.209298, 24.229022], { icon: iconIzvor24 }).addTo(map)
 
 L.marker([45.204523, 24.236996], { icon: iconDiana }).addTo(map)
   .bindPopup('Supermarket Diana');
+  L.marker([45.205753, 24.240209], { icon: iconBiserica }).addTo(map)
+  .bindPopup('Biserica Sfantul Pantelimon');
 
 </script>
 

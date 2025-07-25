@@ -266,14 +266,45 @@ nav a.active::after {
   transform: translateX(-50%) scaleX(1);
 }
 #map {
-  width: 100%;      /* sau altă valoare: ex. 600px */
-  height: 400px;     /* micșorează aici cât vrei */
-  max-width: 800px;  /* opțional, pentru limitare */
-  margin: 50px auto; /* centrare */
-  border-radius: 10px; /* opțional, colțuri rotunde */
-  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* opțional, umbră */
+  width: 100%;      
+  height: 400px;     
+  max-width: 850px; 
+  margin: 50px auto; 
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
+.content.about-page {
+  max-width: 1200px;
+  margin: 160px auto 80px;
+  padding: 0 20px;
+}
+
+.about-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+  min-width: 300px;
+}
+
+.about-video {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-video video {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
 
 
 
