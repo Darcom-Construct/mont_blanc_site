@@ -315,7 +315,7 @@ nav a.active::after {
 }
 .about-text h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px; /* ajustează valoarea după preferință */
+  margin-bottom: 20px;
 }
 .distante-attractii h2 {
   font-size: 1.5rem;
@@ -332,6 +332,102 @@ nav a.active::after {
   margin-bottom: 10px;
   font-size: 1.1rem;
 }
+.whatsapp-simple {
+  display: inline-block;
+  background-color: #CBBBAA; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-simple:hover {
+  background-color: var(--gray-warm);
+}
+.pachete-section {
+  padding: 40px;
+  background: #fff;
+  text-align: center;
+}
+
+.pachet-titlu {
+  font-size: 1.8rem;
+  margin: 0 0 20px;
+  color: var(--brown-muted);
+  text-align: center;
+}
+
+.pachete-grup {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.pachet {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.pachet:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+.pachet h2 {
+  color: var(--brown-muted);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.pachet h3, .pachet h4 {
+  color: var(--brown-muted);
+  margin: 10px 0 5px;
+}
+
+.pachet ul {
+  padding: 0;
+  list-style: none;
+  margin: 0 0 10px;
+}
+
+.whatsapp-simple {
+  display: inline-block;
+  background-color: #958880;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-simple:hover {
+  background-color: #B1A39C; 
+}
+
+
+@media (max-width: 768px) {
+  .pachet {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+
+
 
 
 
