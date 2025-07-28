@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Mont Blanc Olănești</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body class="inner-page despre-page">
+  <div class="logo-bar">
+    <img src="poze/logo.png" alt="Logo Mont Blanc Olănești" />
+  </div>
+
+  <div class="menu-toggle" id="menuToggle">☰</div>
+  <div class="mobile-menu-slide" id="mobileMenu">
+    <a href="index.html">Acasă</a>
+    <a href="camere.html">Camere</a>
+    <a href="despre.html">Despre noi</a>
+    <a href="cantonamente.html">Cantonamente, Tabere și Team Building-uri</a>
+    <a href="contact.html">Contact</a>
+    <a href="oferte.html" class="booking-btn">Oferte</a>
+  </div>
+
+  <div class="nav-bar">
+    <nav>
+      <a href="index.html">Acasă</a>
+      <a href="camere.html">Camere</a>
+      <a href="despre.html">Despre noi</a>
+      <a href="cantonamente.html">Cantonamente, Tabere și Team Building-uri</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <a class="booking-btn" href="oferte.html">Oferte</a>
+  </div>
+<section class="contact-section">
+  <div class="contact-top">
+    <div class="contact-info">
+      <h3>CONTACT</h3>
+      <p>Str. Libertății Nr. 5<br>Băile Olănești, Jud. Vâlcea<br>montblancolanesti@yahoo.com<br><a href="tel:+40766583897">+40766583897</a></p>
+    </div>
+    <div class="contact-button">
+      <a href="https://wa.me/40766583897" class="whatsapp-btn" target="_blank">
+        Rezervă acum
+      </a>
+    </div>
+  </div>
+
+  <div class="map-inside-contact">
+    <div id="map-contact"></div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-contact-with-logo">
+      <div class="footer-logo">
+        <img src="poze/logo.png" alt="Mont Blanc Olănești" />
+      </div>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>Str. Libertății Nr. 5<br>Băile Olănești, Jud. Vâlcea</p>
+        <p><a href="tel:+40766583897">+40766583897</a></p>
+        <p><a>montblancolanesti@yahoo.com</a></p>
+      </div>
+      <div class="footer-picto">
+        <a href="https://reclamatiisal.anpc.ro/?_gl=1*1ucfdba*_ga*MTIxMDg2NDczMC4xNzUzNDQ0NTI0*_ga_FDVTGP2007*czE3NTM0NTA3MDIkbzEkZzEkdDE3NTM0NTA3MjQkajM4JGwwJGgw" target="_blank" rel="nofollow">
+          <img src="https://kitamaru.ro/images/anpc/anpc-sal.svg" alt="SAL" />
+        </a>
+        <a href="https://consumer-redress.ec.europa.eu/index_ro" target="_blank" rel="nofollow">
+          <img src="https://kitamaru.ro/images/anpc/anpc-sol.svg" alt="ODR" />
+        </a>
+      </div>
+
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Mont Blanc Olănești | Toate drepturile rezervate
+  </div>
+</footer>
+  <script>
+    if (document.getElementById('map-contact')) {
+    const mapContact = L.map('map-contact').setView([45.203684, 24.239584], 17);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(mapContact);
+
+    const iconMontBlanc = L.icon({
+      iconUrl: 'poze/logo.png',
+      iconSize: [96, 96],
+      iconAnchor: [48, 48],
+      popupAnchor: [0, -30]
+    });
+
+    L.marker([45.203139, 24.238211], { icon: iconMontBlanc }).addTo(mapContact)
+      .bindPopup('Mont Blanc Olănești');
+  }
+  </script>
+  <script>
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.style.left === "0px";
+    mobileMenu.style.left = isOpen ? "-100%" : "0";
+  });
+</script>
+</body>
+</html>

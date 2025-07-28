@@ -49,7 +49,7 @@ header {
 
 .nav-bar {
   position: fixed;
-  top: 90px; /* exact sub logo-bar */
+  top: 90px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -140,27 +140,6 @@ nav a:hover::after {
 .hero-text p {
   font-size: 1rem;
 }
-
-@media (max-width: 768px) {
-  .logo-bar img {
-    height: 42px;
-  }
-
-  .nav-bar {
-    flex-direction: column;
-    padding: 16px;
-    gap: 16px;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .booking-btn {
-    margin-top: 10px;
-  }
-}
 .bg-video {
   position: absolute;
   top: 0;
@@ -201,6 +180,7 @@ nav a:hover::after {
 
 .footer-contact {
   text-align: left;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .footer-contact h3 {
@@ -245,6 +225,7 @@ nav a:hover::after {
 .about-section h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .about-section p {
@@ -293,6 +274,7 @@ nav a.active::after {
   flex: 1;
   text-align: left;
   min-width: 300px;
+
 }
 
 .about-video {
@@ -316,11 +298,13 @@ nav a.active::after {
 .about-text h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .distante-attractii h2 {
   font-size: 1.5rem;
   margin-bottom: 16px;
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .distante-attractii ul {
@@ -359,6 +343,7 @@ nav a.active::after {
   margin: 0 0 20px;
   color: var(--brown-muted);
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .pachete-grup {
@@ -386,6 +371,7 @@ nav a.active::after {
   color: var(--brown-muted);
   font-size: 1.4rem;
   margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .pachet h3, .pachet h4 {
@@ -415,16 +401,393 @@ nav a.active::after {
 .whatsapp-simple:hover {
   background-color: #B1A39C; 
 }
-
-
 @media (max-width: 768px) {
+  .logo-bar img {
+    height: 100px;
+    width: auto;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .booking-btn {
+    margin-top: 10px;
+  }
   .pachet {
     flex: 1 1 100%;
     max-width: 100%;
   }
 }
+.menu-toggle {
+  display: center;
+  font-size: 2rem;
+  color: white;
+  position: fixed;
+  top: 24px;
+  left: 20px;
+  z-index: 1001;
+  cursor: pointer;
+}
+.mobile-menu-slide {
+  position: fixed;
+  top: 90px;
+  left: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 20px 20px;
+  gap: 20px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.mobile-menu-slide a {
+  color: white;
+  top: 0px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 10px 0;
+  display:inline-block;
+  position: relative;
+}
+
+.mobile-menu-slide a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: left;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-slide a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+.mobile-menu-slide a.booking-btn::after {
+  display: none;
+}
+.mobile-menu-slide .booking-btn {
+  background-color: transparent;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-slide .booking-btn:hover {
+  background-color: white;
+  color: black;
+}
+body.despre-page .mobile-menu-slide {
+  background-color: rgba(203, 187, 170, 0.95);
+  backdrop-filter: none;
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+  .mobile-menu nav a {
+    display: inline-block;
+    position: relative;
+  }
+
+   .mobile-menu .booking-btn {
+    border: none;
+  }
+}
+.contact-section {
+  background-color:white;
+  padding: 50px 20px;
+  color: white;
+  font-family: 'Playfair Display', serif;
+}
+
+.contact-top {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 950px;
+  margin: 150px auto 40px auto;
+  gap: 50px;                     
+  text-align: center;           
+  flex-direction: row; 
+}
+
+.contact-info h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--brown-muted);
+}
+
+.contact-info p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin: 10px 0;
+  color: var(--brown-muted);
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--brown-muted);
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-button .whatsapp-btn {
+  background-color: #958880;
+  color: white;
+  padding: 18px 40px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button .whatsapp-btn:hover {
+  background-color: #BDAFA1;
+}
+
+.map-inside-contact {
+  display: flex;
+  justify-content: center;
+}
+
+#map-contact {
+  width: 100%;
+  max-width: 950px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .contact-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .contact-info p {
+    font-size: 1.1rem;
+  }
+
+  .contact-button .whatsapp-btn {
+    font-size: 1.1rem;
+    padding: 14px 14px;
+  }
+}
+.contact-info h3,
+.contact-info p,
+.contact-info a {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.leaflet-top.leaflet-left {
+  top: auto;
+  bottom: 20px;
+  left: 20px;
+}
+.camere-container {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding-top: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .camera-slideshow {
+    height: 300px;
+  }
+
+  .camera-slideshow img {
+    height: 300px;
+  }
+}
+.camere-prezentare {
+  background-color: white;
+  color: #fff;
+  padding: 180px 20px 40px;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+
+}
+
+.camere-prezentare .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.camere-prezentare h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--brown-muted);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.camere-prezentare p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: var(--brown-muted);
+}
+
+/* lista de dotari */
+.dotari-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 900px;
+  color: var(--brown-muted);
+}
+
+.dotari-lista li {
+  background-color: rgba(255, 255, 255, 0.1); /* 🔁 schimbă aici */
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  width: 160px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease;
+  margin: 10px;
+}
 
 
+.dotari-lista li:hover {
+  transform: scale(1.05);
+}
+
+.dotari-lista img {
+  width: 60px;
+  height: 60px;
+  
+  filter: brightness(0) invert(0);
+  transition: transform 0.3s ease;
+}
+@media (max-width: 768px) {
+  .dotari-lista {
+    gap: 20px;
+  }
+
+  .dotari-lista li {
+    width: 45%;
+    padding: 15px;
+  }
+
+  .dotari-lista img {
+    width: 40px;
+    height: 40px;
+  }
+}
+.slideshow-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px; /* adaugă spațiu sub imagine */
+}
+
+.slideshow {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: block;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #999;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slideshow {
+    height: 300px;
+  }
+}
 
 
 

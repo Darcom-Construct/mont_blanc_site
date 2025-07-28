@@ -7,17 +7,26 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 </head>
-<body class="inner-page">
+<body class="inner-page despre-page">
   <div class="logo-bar">
     <img src="poze/logo.png" alt="Logo Mont Blanc Olănești" />
+  </div>
+  <div class="menu-toggle" id="menuToggle">☰</div>
+  <div class="mobile-menu-slide" id="mobileMenu">
+  <a href="index.html">Acasă</a>
+  <a href="#">Camere</a>
+  <a href="despre.html">Despre noi</a>
+  <a href="#">Cantonamente, Tabere și Team Building-uri</a>
+  <a href="contact.html">Contact</a>
+  <a href="oferte.html" class="booking-btn">Oferte</a>
   </div>
   <div class="nav-bar">
     <nav>
       <a href="index.html">Acasă</a>
       <a href="camere.html">Camere</a>
       <a href="despre.html">Despre noi</a>
-      <a href="#">Cantonamente, Tabere si Team Building-uri</a>
-      <a href="#">Contact</a>
+      <a href="cantonamente.html">Cantonamente, Tabere si Team Building-uri</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <a class="booking-btn active" href="oferte.html">Oferte</a>
   </div>
@@ -148,11 +157,14 @@
       © 2025 Mont Blanc Olănești | Toate drepturile rezervate
     </div>
   </footer>
-  <script>
-  function toggleMenu() {
-    const nav = document.querySelector(".nav-bar nav");
-    nav.classList.toggle("active");
-  }
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.style.left === "0px";
+    mobileMenu.style.left = isOpen ? "-100%" : "0";
+  });
 </script>
 </body>
 </html>

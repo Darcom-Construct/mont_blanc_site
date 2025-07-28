@@ -11,10 +11,20 @@
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 </head>
-<body class="inner-page">
+<body class="inner-page despre-page">
   <div class="logo-bar">
     <img src="poze/logo.png" alt="Logo Mont Blanc Olănești" />
   </div>
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
+<div class="mobile-menu-slide" id="mobileMenu">
+  <a href="index.html">Acasă</a>
+  <a href="#">Camere</a>
+  <a href="despre.html">Despre noi</a>
+  <a href="#">Cantonamente, Tabere și Team Building-uri</a>
+  <a href="contact.html">Contact</a>
+  <a href="oferte.html" class="booking-btn">Oferte</a>
+</div>
 
   <div class="nav-bar">
     <nav>
@@ -175,7 +185,15 @@ L.marker([45.204523, 24.236996], { icon: iconDiana }).addTo(map)
   .bindPopup('Biserica Sfantul Pantelimon');
 
 </script>
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
 
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.style.left === "0px";
+    mobileMenu.style.left = isOpen ? "-100%" : "0";
+  });
+</script>
 
 </body>
 </html>
